@@ -196,35 +196,6 @@ it('Check the iframe test',()=>{
 })
 
 
-it.only('This test is to check fixtures',()=>{
-  cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-  cy.visit("https://preprod.planoly.com/login");
-  
-  cy.fixture('example').then((data)=>{
-    cy.get("input[name='email']").type(data.UserEmail);//this.regData.UserEmail
-    cy.get("input[name='password']").type(data.UserPassword);//this.regData.UserPassword
-    cy.get('#btn-login').click();
-    cy.wait(20000);
-    
-    // let card = cy.get('div .inner').each(()=>{
-    //     card ++;
-    // })
-
-    let card = cy.get('.grid').children('.inner').length;
-    cy.log(card);
-    
-    // cy.contains('NEW POST').click();
-    // cy.get('img[alt="instagram"').click();
-    // cy.get('.block-card__bodyBlock__upload').attachFile('auto_2.jpg',{ subjectType: 'drag-n-drop' });
-    // cy.wait(10000)
-    // cy.get('[data-intro="Save draft"] > .base-btn').click();
-    // cy.wait(10000);
-    // cy.get('div').find('.inner').should('have.length',i+1);
-   
-
-  })
-})
-
 it('This is a test to check Javascript workings',()=>{
   cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
   cy.visit("https://the-internet.herokuapp.com/upload");
@@ -236,7 +207,7 @@ it('This is a test to check Javascript workings',()=>{
 
 it('This is a test to check Javascript workings',()=>{
   cy.intercept({ resourceType: /xhr|fetch/ }, { log: false });
-  cy.visit("https://preprod.planoly.com/login");
+  cy.visit("/");
 
 
   // cy.get('#file-upload').attachFile('auto_2.jpg');
