@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2894","This is to test dropdowns","This to test dropdown options","Sun Apr 27 00:16:16 PDT 2025","passed","Sun Apr 27 00:16:19 PDT 2025","","","",""
+"","3041","This test is to check radio buttons","This to test dropdown options","Sun Apr 27 00:16:13 PDT 2025","passed","Sun Apr 27 00:16:16 PDT 2025","","","",""
+"","3568","This is to test enable/disable & hide unhide fields","This to test dropdown options","Sun Apr 27 00:16:23 PDT 2025","passed","Sun Apr 27 00:16:27 PDT 2025","","","",""

@@ -1,0 +1,23 @@
+{
+  "name": "testingstuff",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress-real-events": "^1.14.0",
+    "cypress-recurse": "^1.35.3"
+  },
+  "devDependencies": {
+    "allure-cypress": "^3.2.1",
+    "cypress": "^14.3.2",
+    "cypress-file-upload": "^5.0.8",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^2.0.1",
+    "type": "module"
+  }
+}
