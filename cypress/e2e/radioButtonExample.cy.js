@@ -5,7 +5,8 @@ describe("This to test ratio options", () => {
     cy.visit("/practice");
   });
 
-  it.only("This is to test radio buttons", () => {
+  it("This is to test radio buttons", () => {
     practicePage.selectBMWRadioButton();
   });
+  
 });
