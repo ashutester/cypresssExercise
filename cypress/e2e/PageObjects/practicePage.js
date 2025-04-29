@@ -1,3 +1,5 @@
+import coursesPage from "./coursesPage";
+
 class PracticePage {
   elements = {
     bmwOptionInDropdown: 'option[value="bmw"]',
@@ -11,6 +13,9 @@ class PracticePage {
     alertButton: "#alertbtn",
     confirmButton: "#confirmbtn",
     nameInput: 'input[placeholder = "Enter Your Name"]',
+    multiSelectDropdown: '#multiple-select-example',
+    newTabButton: '#opentab',
+    iFrameMastertag: '#courses-iframe'
   };
   checkURL() {
     cy.url().should("include", "practice");
@@ -20,7 +25,7 @@ class PracticePage {
   }
   selectBenzFrmDropdown() {
     cy.get(this.elements.carSelectDropdown).select("benz");
-    cy.get(this.elements.carSelectDropdown).should("have.value", "bmw");
+    cy.get(this.elements.carSelectDropdown).should("have.value", "benz");
   }
   checkHondaCheckbox() {
     cy.get(this.elements.hondaCheckbox).check();
@@ -63,6 +68,19 @@ class PracticePage {
     cy.on("window:confirm", (t) => {
       return false;
     });
+  }
+  checkMultiSelectDropdown(){
+    cy.get(this.elements.multiSelectDropdown).select(['apple','orange']).invoke('val').should('deep.equal',['apple','orange']);
+  }
+  checkNewTab(){
+    cy.get(this.elements.newTabButton).invoke('removeAttr','target').click();
+    cy.url().should('include','/courses');
+    coursesPage.checkHeader();
+  }
+  checkiFrameElements(){
+
+    cy.frameLoaded(this.elements.iFrameMastertag);
+    cy.iframe(this.elements.iFrameMastertag).xpath('//h4[contains(.,"Cypress.io Test Automation")]').should('be.visible');
   }
 }
 

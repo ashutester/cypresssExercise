@@ -13,7 +13,7 @@
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 /// <reference types="Cypress" />
-/// <reference types = "Cypressiframe"/> 
+/// <reference types = "Cypressiframe"/>
 
 //
 // -- This is a child command --
@@ -26,3 +26,10 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("getIframe", (iFrameLocator) => {
+  cy.get(iFrameLocator)
+    .its("0.contentDocument.body")
+    .should("be.visible")
+    .then(cy.wrap);
+});

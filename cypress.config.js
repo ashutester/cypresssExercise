@@ -7,8 +7,9 @@ module.exports = defineConfig({
       allureCypress(on, config);
       return config;
     },
+    
     excludeSpecPattern: [
-      'cypress/e2e/dropDownPractice.cy.js',
+      //'cypress/e2e/dropDownPractice.cy.js',
       'cypress/e2e/SelectorTesting.cy.js'
     ],
     viewportWidth: 1024,
